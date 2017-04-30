@@ -73,6 +73,7 @@ describe('table-view', () => {
 			td = trs[2].cells[3];
 			expect(td.className).not.toBe('');
 		});
+
 		it('has the right size', () => {
 			// set up the initial state
 			const numCols = 6;
@@ -114,6 +115,21 @@ describe('table-view', () => {
 
 			let labelTexts = Array.from(ths).map(el => el.textContent);
 			expect(labelTexts).toEqual(['A', 'B', 'C', 'D', 'E', 'F']);
+		});
+	});
+
+	describe('table footer', () => {
+		it('has the right size', () => {
+			// set up the initial state
+			const numCols = 6;
+			const numRows = 10;
+			const model = new TableModel(numCols, numRows);
+			const view = new TableView(model);
+			view.init();
+
+			// inspect the initial state
+			let ths = document.querySelectorAll('TFOOT TR TD');
+			expect(ths.length).toBe(numCols);
 		});
 	});
 
