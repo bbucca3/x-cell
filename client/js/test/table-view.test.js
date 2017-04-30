@@ -131,6 +131,20 @@ describe('table-view', () => {
 			let ths = document.querySelectorAll('TFOOT TR TD');
 			expect(ths.length).toBe(numCols);
 		});
+
+		it('correctly adds positive numbers', () => {
+			// set up the initial state
+			const model = new TableModel(3, 3);
+			model.setValue({col: 1, row: 1}, '2');
+			model.setValue({col: 1, row: 2}, '2');
+			const view = new TableView(model);
+			view.init();
+
+			// inspect initial state
+			let ths = document.querySelectorAll('TFOOT TR TD');
+			expect(ths[1].textContent).toBe('4');
+
+		});
 	});
 
 
