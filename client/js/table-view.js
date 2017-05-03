@@ -128,12 +128,6 @@ class TableView {
         return total;
     }
 
-    checkNum(num) {
-      if (num !== undefined && !isNaN(num)) {
-        return num;
-      }
-    }
-
 
 }
 
