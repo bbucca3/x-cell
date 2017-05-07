@@ -121,7 +121,7 @@ class TableView {
             if(this.model.getValue({col: col, row: row}) !== undefined && 
                 !isNaN(this.model.getValue({col: col, row: row}))) {
                 // sum total
-                total = total + parseInt(this.model.getValue({col: col, row: row}));
+                total += parseInt(this.model.getValue({col: col, row: row}));
                 
             }
         }
